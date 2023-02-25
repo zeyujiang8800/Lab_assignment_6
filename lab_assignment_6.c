@@ -2,7 +2,21 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
-	return -1;
+	int middle_value;
+	if (low <= high) {
+		middle_value = (low+high) / 2;
+		//splits the array into two parts
+		if (value < numbers[middle_value])
+			return search(numbers, low, middle_value-1, value);\
+			//searches the lower half
+		else if (numbers, middle_value+1, high, value)
+			return search(numbers, middle_value+1, high, value);
+			//searches the upper half
+		else
+			return 1;
+			//if the first value is the number, then it's found, and it keeps searching till its found
+	}
+	return 0;
 }
 
 void printArray(int numbers[], int sz)
